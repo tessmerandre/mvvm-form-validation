@@ -1,4 +1,4 @@
-package com.tessmerandre
+package com.tessmerandre.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
