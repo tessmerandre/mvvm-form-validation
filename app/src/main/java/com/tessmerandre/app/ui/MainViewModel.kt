@@ -32,7 +32,7 @@ class MainViewModel : ViewModel() {
             withContext(Dispatchers.IO) {
                 val message = makeMessage()
                 // repository.saveMessage(message)
-                delay(1000) // faking service call
+                delay(1500) // faking service call
                 emitUiState(loading = false, succeed = true)
             }
         }

@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">MVVM Form validation</string>
+
     <string name="error_required_field">Required field</string>
     <string name="error_message_title_invalid">The title must have at least 6 characters</string>
+    <string name="error_creating_message">An error occurred while creating your message.</string>
+
+    <string name="msg_message_successfully_created">Message successfully created.</string>
 </resources>
