@@ -1,11 +1,12 @@
 package com.tessmerandre.app.utils
 
+import androidx.annotation.StringRes
 import androidx.lifecycle.MutableLiveData
 import com.tessmerandre.app.R
 
 class ValidationLiveData: MutableLiveData<Int?>() {
 
-    fun invalid(error: Int = R.string.error_required_field) {
+    fun invalid(@StringRes error: Int = R.string.error_required_field) {
         value = error
     }
 

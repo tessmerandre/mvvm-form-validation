@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tessmerandre.app.R
 import com.tessmerandre.app.data.Message
+import com.tessmerandre.app.utils.Event
 import com.tessmerandre.app.utils.ValidationLiveData
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -46,21 +47,22 @@ class MainViewModel : ViewModel() {
     }
 
     private fun canProceed(): Boolean {
+        var proceed = true
         if (title.value?.length ?: 0 < 6) {
             isTitleValid.invalid(R.string.error_message_title_invalid)
-            return false
+            proceed =  false
         } else {
             isTitleValid.valid()
         }
 
         if (content.value.isNullOrEmpty() || content.value?.isBlank() == true) {
             isContentValid.invalid()
-            return false
+            proceed =  false
         } else {
             isContentValid.valid()
         }
 
-        return true
+        return proceed
     }
 
     private suspend fun emitUiState(
@@ -69,14 +71,14 @@ class MainViewModel : ViewModel() {
         failed: Boolean = false
     ) {
         withContext(Dispatchers.Main) {
-            _uiState.value = UiState(loading, succeed, failed)
+            _uiState.value = UiState(loading, Event(succeed), Event(failed))
         }
     }
 
 }
 
 data class UiState(
-    val loading: Boolean = false,
-    val succeed: Boolean = false,
-    val failed: Boolean = false
+    val loading: Boolean,
+    val succeed: Event<Boolean>,
+    val failed: Event<Boolean>
 )
