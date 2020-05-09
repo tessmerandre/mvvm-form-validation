@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">mvvm-form-validation</string>
+    <string name="app_name">MVVM Form validation</string>
+    <string name="error_required_field">Required field</string>
+    <string name="error_message_title_invalid">The title must have at least 6 characters</string>
 </resources>
