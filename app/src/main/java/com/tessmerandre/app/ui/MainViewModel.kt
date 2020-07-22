@@ -33,8 +33,8 @@ class MainViewModel : ViewModel() {
                 val message = makeMessage()
                 // repository.saveMessage(message)
                 delay(1500) // faking service call
-                emitUiState(loading = false, succeed = true)
             }
+            emitUiState(loading = false, succeed = true)
         }
     }
 

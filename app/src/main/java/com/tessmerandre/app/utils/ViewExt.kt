@@ -15,7 +15,7 @@ fun isValid(view: View, isValid: MutableLiveData<Int?>) {
             view.error = error
         }
         else -> {
-            // Handle all other types of views (spinner...)
+            // Handle all other types of views (spinner...) and even custom views
         }
     }
 }
