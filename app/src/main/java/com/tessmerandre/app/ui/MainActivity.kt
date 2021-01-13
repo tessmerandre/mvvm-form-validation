@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
@@ -53,6 +54,12 @@ class MainActivity : AppCompatActivity() {
                     .make(viewBinding.root, R.string.msg_message_successfully_created, Snackbar.LENGTH_LONG)
                     .show()
             }
+        })
+
+        viewModel.form.canProceed.observe(this, Observer {
+            Snackbar
+                .make(viewBinding.root, it.toString(), Snackbar.LENGTH_LONG)
+                .show()
         })
     }
 

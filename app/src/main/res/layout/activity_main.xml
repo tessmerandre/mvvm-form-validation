@@ -36,15 +36,18 @@
             android:paddingRight="8dp">
 
             <TextView
+                android:id="@+id/titlea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Title" />
 
             <EditText
+                android:id="@+id/titlee"
+                android:labelFor="@+id/titlea"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={viewModel.title}"
-                app:isValid="@{viewModel.isTitleValid}" />
+                android:text="@={viewModel.form.title}"
+                app:isValid="@{viewModel.form.isTitleValid}" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -55,8 +58,8 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={viewModel.content}"
-                app:isValid="@{viewModel.isContentValid}" />
+                android:text="@={viewModel.form.content}"
+                app:isValid="@{viewModel.form.isContentValid}" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -67,7 +70,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={viewModel.observation}" />
+                android:text="@={viewModel.form.observation}" />
 
         </LinearLayout>
 
